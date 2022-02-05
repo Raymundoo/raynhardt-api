@@ -1,0 +1,15 @@
+### Django ###
+*.log
+*.pot
+*.pyc
+__pycache__/
+
+#Carpeta de pycharm
+.idea/
+.vscode/
+
+### Environ ###
+#RaynhardtAPI/.env
+
+
+

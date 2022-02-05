@@ -1,0 +1,56 @@
+{% extends "account/base.html" %}
+{% load i18n widget_tweaks %}
+{% block title %}Iniciar Sesión{% endblock title %}
+
+{% block content %}
+    <!-- Section-->
+    <section class="py-5">
+        <div class="container px-4 px-lg-5 mt-5">
+            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Sign In</h3>
+                        <!--div class="d-flex justify-content-end social_icon">
+                            <span><i class="fab fa-facebook-square"></i></span>
+                            <span><i class="fab fa-google-plus-square"></i></span>
+                            <span><i class="fab fa-twitter-square"></i></span>
+                        </div-->
+                    </div>
+                    <div class="card-body">
+                        <form  class="login" id="signup_form" method="post" action="{% url 'account_login' %}">
+                            {% csrf_token %} {{ form.non_field_errors }}
+                            <div class="input-group form-group">
+                                {{ form.login.errors }}
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                </div>
+                                {% render_field form.login class="form-control" placeholder="Usuario o Email" %}
+                            </div>
+                            <div class="input-group form-group">
+                                {{ form.password.errors }}
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                </div>
+                                {% render_field form.password class="form-control" placeholder="Contraseña" %}
+                            </div>
+                            <div class="row align-items-center remember">
+                                <input id='id_remember' name='remember' type='checkbox' value='1' checked> Recordarme
+                            </div>
+                            <div class="form-group mt-3">
+                                <input type="submit" value="Iniciar Sesión" class="btn float-right login_btn">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-footer">
+                        <div class="d-flex justify-content-center links">
+                            Don't have an account?<a href="{% url 'account_signup' %}">Sign Up</a>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <a href="{% url 'account_reset_password' %}">Forgot your password?</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}

@@ -1,0 +1,21 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+    <section class="py-5">
+        <div class="container px-4 px-lg-5 mt-5">
+            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                <form class="login" id="signup_form" method="post" action="{% url 'account_logout' %}">
+                    {% csrf_token %}
+                    <p class="text-center">¿Estás segura de que quieres cerrar sesión?</p>
+                    {{ form.as_p }}
+                    {% if redirect_field_value %}
+                        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                    {% endif %}
+                    <div class="form-row text-center">
+                        <button type="submit" class="button border margin-top-5">Estoy Seguro</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+{% endblock %}
