@@ -24,6 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # path('', include('authentication.urls')),
     path('', include('api.urls')),
+    path('', include('mascotas.urls')),
     path('accounts/', include('allauth.urls')),
     # Simple JWT
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
