@@ -57,3 +57,5 @@ pegamos lo siguiente
 ## 7. Instalar el proyecto que funcionara como cliente https://github.com/Raymundoo/api-cliente
 
 ## EDITADO
+
+## MOIFICACION DANIEL
